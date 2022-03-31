@@ -1,0 +1,10 @@
+Cuenta:
+  usuario: admin
+  clave: ucv2019
+MySQL:
+  status: true
+  ip: localhost
+  port: '3306'
+  database: xd
+  username: luisac
+  password: 15785500Hola@

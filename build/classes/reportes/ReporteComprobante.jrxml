@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9ac69648-e158-4454-8510-50d3eca67eba">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<parameter name="parameter2" class="java.lang.String"/>
+	<parameter name="parameter3" class="java.lang.String"/>
+	<parameter name="parameter4" class="java.lang.String"/>
+	<parameter name="parameter5" class="java.lang.String"/>
+	<parameter name="parameter6" class="java.lang.String"/>
+	<parameter name="parameter7" class="java.lang.String"/>
+	<field name="producto" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.String"/>
+	<field name="costo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="171" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="553" height="100" backcolor="#000000" uuid="b6d85021-4008-4c36-8c5d-dbd1d8bb616c"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="550" height="66" uuid="8064c96e-5988-4fa5-a2b5-545672057413"/>
+					<textElement textAlignment="Center">
+						<font isBold="false" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Comprobante de pago]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="301" y="66" width="249" height="29" uuid="a8689d7e-7d1c-424f-9625-e05ced3e324c"/>
+					<textElement textAlignment="Right">
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Minimarket]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="2" y="66" width="299" height="29" uuid="ffcc4b3f-b48c-45b3-89d1-a044277554bf"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[RUC 123123123    Tlf: 3159000 - 2067543 - AV. NOSEXD AEAMANITO Nro. 123123]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="553" height="71" forecolor="#000000" backcolor="#CC0000" uuid="74f30945-ab9f-48f2-ac44-2a6ae642db26"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="125" y="5" width="144" height="20" forecolor="#FFFFFF" uuid="1a01ccd3-c95c-4c98-afc8-6729bcdf7656"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="10" y="5" width="117" height="20" forecolor="#FFFFFF" uuid="de7d6dd2-b913-44e8-b6f5-a1242da2494a"/>
+					<text><![CDATA[FECHA DE COMPRA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="25" width="115" height="20" forecolor="#FFFFFF" uuid="836b6022-c7ca-4162-9ed3-478bd2e4e886"/>
+					<text><![CDATA[CÓDIGO DE COMPRA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="10" y="45" width="115" height="20" forecolor="#FFFFFF" uuid="d71b652c-035d-4280-9fd7-31ab5ac601e6"/>
+					<text><![CDATA[CÓDIGO DE CLIENTE:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="127" y="25" width="142" height="20" forecolor="#FFFFFF" uuid="be1cefec-1e05-45c5-b6e3-c10fbafb3d2c"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$P{parameter6}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="127" y="45" width="142" height="20" forecolor="#FFFFFF" uuid="a98ab2d8-9602-4ee0-8980-120d161f759d"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$P{parameter7}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="301" height="20" forecolor="#FFFFFF" backcolor="#FF6666" uuid="1dfbb0d1-c134-4125-97ae-d24e3c8a0a99"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="301" y="0" width="132" height="20" forecolor="#FFFFFF" backcolor="#FF6666" uuid="998a700d-e6d8-4664-a588-fb310da99479"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="433" y="0" width="120" height="20" forecolor="#FFFFFF" backcolor="#FF6666" uuid="89961e8d-b842-4f44-bfe9-46d8ec5f8cdd"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Costo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="553" height="24" uuid="c843eb9e-9a72-40a8-ba06-b99d7b42f187"/>
+				<textField>
+					<reportElement x="2" y="0" width="299" height="20" uuid="870fd02c-6c74-40b3-abe4-c13af8291d59"/>
+					<textElement textAlignment="Center">
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{producto}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="301" y="0" width="132" height="20" uuid="5a55f4e9-4cd0-4081-8a07-c542f4d16eca"/>
+					<textElement textAlignment="Center">
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="435" y="0" width="115" height="20" uuid="c921d595-1bd5-4858-91b2-6df9344982f3"/>
+					<textElement textAlignment="Center">
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="69" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="553" height="69" forecolor="#000000" backcolor="#CC0000" uuid="2ce95fc6-f6a0-4a86-9ef7-140c4594b88c"/>
+				<staticText>
+					<reportElement x="17" y="10" width="69" height="15" forecolor="#FFFFFF" uuid="bab883dd-3b9f-4dd9-bc9f-5fe4a2093d63"/>
+					<text><![CDATA[Sub total:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="17" y="30" width="69" height="15" forecolor="#FFFFFF" uuid="5f736f35-7c4b-4584-82fa-78d7ec28e7a7"/>
+					<text><![CDATA[IGV:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="17" y="50" width="69" height="15" forecolor="#FFFFFF" uuid="f2a1bd56-f246-4cec-b582-86495454cab9"/>
+					<text><![CDATA[Total:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="86" y="10" width="100" height="15" forecolor="#FFFFFF" uuid="3f471aac-7054-4ba3-b4f6-4500eb5c51c3"/>
+					<textFieldExpression><![CDATA[$P{parameter1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="86" y="30" width="100" height="15" forecolor="#FFFFFF" uuid="1b10d040-3f13-4734-a3b5-08c021091364"/>
+					<textFieldExpression><![CDATA[$P{parameter2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="86" y="50" width="100" height="15" forecolor="#FFFFFF" uuid="c89ab8a2-ca79-4401-bdb0-69e14379fd72"/>
+					<textFieldExpression><![CDATA[$P{parameter3}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="204" y="10" width="69" height="15" forecolor="#FFFFFF" uuid="468abca5-4803-485d-8c8c-6e40458e2e2a"/>
+					<text><![CDATA[Monto dado:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="204" y="30" width="69" height="15" forecolor="#FFFFFF" uuid="f7439228-9f51-4f1e-9b25-0c85d3d9b229"/>
+					<text><![CDATA[Vuelto:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="273" y="30" width="100" height="15" forecolor="#FFFFFF" uuid="4bad0832-1ad3-4e9e-ab06-f285e47a470d"/>
+					<textFieldExpression><![CDATA[$P{parameter5}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="273" y="10" width="100" height="15" forecolor="#FFFFFF" uuid="b44842f5-6c99-41f3-8a5b-f10f0ec95621"/>
+					<textFieldExpression><![CDATA[$P{parameter4}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="553" height="21" forecolor="#D0B48E" backcolor="#000000" uuid="4d6f5d8a-ad7c-4209-8544-71fc37339927"/>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
